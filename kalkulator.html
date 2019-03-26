@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kalkulator</title>
+</head>
+<body>
+	<center>
+		<h1>Kalkulator Sederhana</h1>
+<input type="number" id="angka1" name="angka1" placeholder="Masukkan Angka"><br><br>
+<select id="operator">
+	<option value="+">+</option>
+	<option value="-">-</option>
+	<option value="*">x</option>
+	<option value="/">:</option>
+</select><br><br>
+<input type="number" id="angka2" name="angka2" placeholder="Masukkan Angka"><br><br>
+<button onclick="jumlahkan()">Total</button><br><br>
+
+Hasilnya adalah : <input type="text" id="jumlah" readonly name="">
+</center>
+</body>
+
+<script type="text/javascript">
+	function jumlahkan() {
+		var angka1 = document.getElementById('angka1').value;
+		var angka2 = document.getElementById('angka2').value;
+		var jml = '';
+
+		var op = document.getElementById('operator').value;
+
+		if(op=='+'){
+			jml = parseInt(angka1) + parseInt(angka2);
+		}else if(op=='-'){
+			jml = parseInt(angka1) - parseInt(angka2);
+		}else if(op=='*'){
+			jml = parseInt(angka1) * parseInt(angka2);
+		}else if(op=='/'){
+			jml = parseInt(angka1) / parseInt(angka2);
+		}
+
+		document.getElementById('jumlah').value= jml;
+		console.log(jml);
+	}
+
+</script>
+</html>
